@@ -86,7 +86,7 @@ def recipe_search(query, page=1, sortby="Best Match"):
 
 def _parse_recipe(recipe_html):
     try:
-        title = recipe_html.find("h1", itemprop="name").text
+        title = recipe_html.find("span", attrs={'class':'o-AssetTitle__a-HeadlineText'}).text
     except AttributeError:
         title = ""
     try:
